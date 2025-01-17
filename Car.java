@@ -27,9 +27,46 @@
      */
 public class Car {
     // Variables:
+    private String vin;
+    private static String make = "Zoomster";
+    private String model;
+    private String licensePlateNumber;
+    private static int totalCars;
+    private static int speedsterCars;
+    private static int roadsterCars;
+    private static int cubesterCars;
+    private static int totalProfits;
+    private static int vinLetter;
+    private static int vinNumber;
 
     // Constructor:
-    
+    public Car(String carModel){
+        if(vinNumber == 0){
+            vinNumber = 10000;
+        }
+        if (vinLetter == 0){
+            vinLetter = 65;
+        }
+        vin = ((char)vinLetter) + vinNumber;
+        if (vinNumber = 99999){
+            vinLetter++;
+            vinNumber = 10000;
+        } else {
+        vinNumber++;
+        }
+        model = carModel;
+        totalCars++;
+        if(model.equals("Speedster")){
+            speedsterCars++;
+            totalProfits += 102000;
+        } else if(model.equals("Roadster")){
+            roadsterCars++;
+            totalProfits += 206000;
+        } else if(model.equals("Cubester")){
+            cubesterCars++;
+            totalProfits += 74000;
+        }
+    }
 
     // Methods:
     /**
@@ -39,19 +76,19 @@ public class Car {
      * @return VIN -the VIN of the Car object
      */
     public String getVIN(){
-
+        return vin;
     }
     /**
      * [your Javadocs here]
      */
     public String getModel(){
-
+        return model;
     }
     /**
      * [your Javadocs here]
      */
     public String getMake(){
-
+        return make;
     }
     /**
      * Sets the String license plate number of a given Car object.
