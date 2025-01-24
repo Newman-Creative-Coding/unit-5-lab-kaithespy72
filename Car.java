@@ -35,7 +35,7 @@ public class Car {
     private static int speedsterCars;
     private static int roadsterCars;
     private static int cubesterCars;
-    private static int totalProfits;
+    private static double totalProfits;
     private static int vinLetter;
     private static int vinNumber;
 
@@ -48,7 +48,7 @@ public class Car {
             vinLetter = 65;
         }
         vin = ((char)vinLetter) + vinNumber;
-        if (vinNumber = 99999){
+        if (vinNumber == 99999){
             vinLetter++;
             vinNumber = 10000;
         } else {
@@ -97,21 +97,21 @@ public class Car {
      * @param plateNumber -the customer's String license plate number
      */
     public void setPlateNumber(String plateNumber){
-
+        licensePlateNumber = plateNumber;
     }
     /**
      * Returns the total profits from cars produced by my factory.
      * @return totalProfits -the total sale price of all Car objects created
      */
-    public double getTotalProfits(){
-
+    public String getTotalProfits(){
+        return "$" + totalProfits;
     }
     /**
      * Returns the total number of cars produced by my factory.
      * @return totalCars -the total number of Car objects created
      */
     public int getTotalCars(){
-
+        return totalCars;
     }
     /**
      * Returns the  number of Speedster cars produced by my factory.
@@ -119,7 +119,7 @@ public class Car {
      * with model "Speedster" created
      */
     public int getTotalSpeedsters(){
-
+        return speedsterCars;
     }
     /**
      * Returns the  number of Roadster cars produced by my factory.
@@ -127,7 +127,7 @@ public class Car {
      * with model "Roadster" created
      */
     public int getTotalRoadsters(){
-
+        return roadsterCars;
     }
     /**
      * Returns the  number of Cubester cars produced by my factory.
@@ -135,7 +135,10 @@ public class Car {
      * with model "Cubester" created
      */
     public int getTotalCubesters(){
-
+        return cubesterCars;
     }
 
+    public String toString(){
+        return "This car has make " + make + ", model " + model + ", a VIN of " + vin + ", a license plate number of " + licensePlateNumber +  ",is the " + totalCars + "th car sold, and the company has made $" + totalProfits + ".";
+    }
 }
