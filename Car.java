@@ -47,7 +47,7 @@ public class Car {
         if (vinLetter == 0){
             vinLetter = 65;
         }
-        vin = ((char)vinLetter) + vinNumber;
+        vin = Character.toString((char)vinLetter) + vinNumber;
         if (vinNumber == 99999){
             vinLetter++;
             vinNumber = 10000;
@@ -138,7 +138,7 @@ public class Car {
         return cubesterCars;
     }
 
-    public String toString(){
-        return "This car has make " + make + ", model " + model + ", a VIN of " + vin + ", a license plate number of " + licensePlateNumber +  ",is the " + totalCars + "th car sold, and the company has made $" + totalProfits + ".";
+    public String returnString(){
+        return "This car has make " + make + ", model " + model + ", a VIN of " + vin + ", a license plate number of " + licensePlateNumber +  ", is the " + totalCars + "th car sold, and the company has made $" + totalProfits + ".";
     }
 }
